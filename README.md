@@ -93,7 +93,6 @@ For comprehensive documentation, see the **[docs/](docs/)** directory:
 - **[Query Analysis](docs/query-analysis.md)** - Database query debugging
 - **[REST API Debugging](docs/rest-api-debugging.md)** - REST API and AJAX debugging
 - **[Function Reference](docs/function-reference.md)** - Complete function list
-- **[Examples & Recipes](docs/examples.md)** - Real-world debugging scenarios
 
 ### 🚀 Quick Links
 - [How to use the profiler →](docs/profiling.md)
@@ -188,8 +187,6 @@ dump_wp_context(); // Full WordPress state
 | `perf()` | `dump_performance()` |
 | `env()` | `dump_wp_env()` |
 | `queries()` | `dump_query()` |
-
-## Troubleshooting
 
 ### "Headers already sent" Error
 This plugin uses output buffering to prevent this error. If you use `dd()` very early in WordPress loading, use `dump()` instead.

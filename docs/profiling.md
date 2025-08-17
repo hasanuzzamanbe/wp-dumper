@@ -344,4 +344,3 @@ function get_user_posts_optimized($user_id) {
 
 - [Query Analysis](query-analysis.md) - Database query debugging
 - [WordPress Debugging](wordpress-debugging.md) - WordPress-specific debugging
-- [Examples & Recipes](examples.md) - Real-world profiling examples

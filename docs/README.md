@@ -5,27 +5,17 @@ A comprehensive WordPress debugging plugin that provides Laravel-style variable 
 ## 📚 Documentation Index
 
 ### Getting Started
-- [Installation & Setup](installation.md)
 - [Basic Usage](basic-usage.md)
-- [Configuration](configuration.md)
 
 ### Core Features
 - [Basic Dumping Functions](basic-dumping.md) - `dump()`, `dd()`, and core functionality
-- [WordPress Debugging](wordpress-debugging.md) - WordPress-specific debugging functions
 - [Performance Profiling](profiling.md) - Advanced performance analysis and profiling
 - [Query Analysis](query-analysis.md) - Database query debugging and optimization
-- [REST API Debugging](rest-api-debugging.md) - Debugging REST API and AJAX requests
-
-### Advanced Features
-- [Template Debugging](template-debugging.md) - Theme and template debugging
-- [Hook & Filter Analysis](hooks-debugging.md) - WordPress hooks and actions debugging
-- [User & Capabilities](user-debugging.md) - User roles and capabilities debugging
-- [Environment Analysis](environment-debugging.md) - WordPress environment and configuration
+- User & Capabilities - User roles and capabilities debugging
+- Environment Analysis - WordPress environment and configuration
 
 ### Reference
 - [Function Reference](function-reference.md) - Complete list of all available functions
-- [Examples & Recipes](examples.md) - Common debugging scenarios and solutions
-- [Troubleshooting](troubleshooting.md) - Common issues and solutions
 
 ## 🚀 Quick Start
 
@@ -122,14 +112,10 @@ Each documentation file covers specific aspects of the plugin:
 
 ## 🆘 Need Help?
 
-- Check the [Troubleshooting Guide](troubleshooting.md) for common issues
-- Review [Examples & Recipes](examples.md) for specific use cases
 - See the [Function Reference](function-reference.md) for complete API documentation
 
 ## 🔗 Quick Links
 
-- [Basic Dumping Functions →](basic-dumping.md)
-- [WordPress Debugging →](wordpress-debugging.md)
 - [Performance Profiling →](profiling.md)
 - [Query Analysis →](query-analysis.md)
 - [Function Reference →](function-reference.md)
