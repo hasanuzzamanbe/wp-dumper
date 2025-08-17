@@ -38,6 +38,12 @@ if (file_exists(WP_LARAVEL_DUMPER_PATH . 'vendor/autoload.php')) {
     return;
 }
 
+// Include WordPress-specific debugging helpers
+require_once WP_LARAVEL_DUMPER_PATH . 'wp-debug-helpers.php';
+require_once WP_LARAVEL_DUMPER_PATH . 'wp-debug-profiler.php';
+require_once WP_LARAVEL_DUMPER_PATH . 'wp-query-analyzer.php';
+require_once WP_LARAVEL_DUMPER_PATH . 'wp-debug-toolkit.php';
+
 /**
  * Configure the VarDumper handler.
  *
@@ -123,11 +129,22 @@ if (!function_exists('dump')) {
      * Dumps the given variables and ends the script.
      */
     function dd(...$vars)
-    {
-        // For 'dd', we want immediate output, so we'll dump and then die.
-        // This will still cause a headers error if used too early,
-        // but that's the expected behavior of "dump and die".
-        echo '<div style="padding: 20px; background: #18171B;">';
+{
+    // Check if this is a REST API or AJAX request
+    $isRestRequest = defined('REST_REQUEST') && REST_REQUEST;
+    $isAjaxRequest = wp_doing_ajax();
+
+    if ($isRestRequest || $isAjaxRequest) {
+        // For AJAX, output HTML directly
+        echo '<pre>';
+        foreach ($vars as $var) {
+            var_dump($var);
+        }
+        echo '</pre>';
+        die();
+    } else {
+        // For regular requests, use the original behavior
+        echo '<div style="padding: 10px; background: #18171B;">';
 
         // Temporarily disable the custom handler to dump directly.
         $handler = VarDumper::setHandler(null);
@@ -142,5 +159,6 @@ if (!function_exists('dump')) {
         echo '</div>';
         die(1);
     }
+}
 //}
 
