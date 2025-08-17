@@ -1,0 +1,15 @@
+{
+  "name": "your-name/wp_dumper",
+  "description": "A WordPress plugin that provides a Laravel-style dumper using Symfony's VarDumper component.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Hasanuzzaman",
+      "email": "shamim@authlab.io"
+    }
+  ],
+  "require": {
+    "symfony/var-dumper": "^6.4"
+  }
+}
