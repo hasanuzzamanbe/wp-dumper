@@ -88,7 +88,6 @@ For comprehensive documentation, see the **[docs/](docs/)** directory:
 
 ### 📚 Documentation Index
 - **[Installation & Setup](docs/installation.md)** - Get started with WP Dumper
-- **[Basic Usage](docs/basic-dumping.md)** - Core `dump()` and `dd()` functions
 - **[WordPress Debugging](docs/wordpress-debugging.md)** - WordPress-specific debugging
 - **[Performance Profiling](docs/profiling.md)** - Advanced performance analysis
 - **[Query Analysis](docs/query-analysis.md)** - Database query debugging

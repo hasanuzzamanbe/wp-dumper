@@ -4,6 +4,22 @@ Get started with WP Dumper's core functionality for debugging WordPress applicat
 
 ## 🚀 Quick Start
 
+## ⚙️ Configuration
+
+### Basic Configuration
+
+Add these constants to your `wp-config.php` for optimal debugging:
+
+```php
+// Enable WordPress debugging
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+
+// Optional: Enable query debugging
+define('SAVEQUERIES', true);
+```
+
 ### Basic Variable Dumping
 
 ```php

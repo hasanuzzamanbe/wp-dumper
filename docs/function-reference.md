@@ -400,7 +400,6 @@ queries();
 
 ## 🔗 Related Documentation
 
-- [Basic Dumping](basic-dumping.md) - Core dump functions
 - [WordPress Debugging](wordpress-debugging.md) - WordPress-specific functions
 - [Performance Profiling](profiling.md) - Profiling functions
 - [Query Analysis](query-analysis.md) - Query analysis functions
