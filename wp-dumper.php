@@ -39,10 +39,10 @@ if (file_exists(WP_LARAVEL_DUMPER_PATH . 'vendor/autoload.php')) {
 }
 
 // Include WordPress-specific debugging helpers
-require_once WP_LARAVEL_DUMPER_PATH . 'wp-debug-helpers.php';
-require_once WP_LARAVEL_DUMPER_PATH . 'wp-debug-profiler.php';
-require_once WP_LARAVEL_DUMPER_PATH . 'wp-query-analyzer.php';
-require_once WP_LARAVEL_DUMPER_PATH . 'wp-debug-toolkit.php';
+require_once WP_LARAVEL_DUMPER_PATH . 'dumpers/wp-debug-helpers.php';
+require_once WP_LARAVEL_DUMPER_PATH . 'dumpers/wp-debug-profiler.php';
+require_once WP_LARAVEL_DUMPER_PATH . 'dumpers/wp-query-analyzer.php';
+require_once WP_LARAVEL_DUMPER_PATH . 'dumpers/wp-debug-toolkit.php';
 
 /**
  * Configure the VarDumper handler.
