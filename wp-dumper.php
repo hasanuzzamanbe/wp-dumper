@@ -124,7 +124,7 @@ if (!function_exists('dump')) {
     }
 }
 
-//if (!function_exists('ddd')) {
+if (!function_exists('dd')) {
     /**
      * Dumps the given variables and ends the script.
      */
@@ -160,5 +160,5 @@ if (!function_exists('dump')) {
         die(1);
     }
 }
-//}
+}
 
