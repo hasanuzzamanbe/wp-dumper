@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       WP Dumper
+ * Plugin Name:       Dump WP
  * Plugin URI:        https://wpminers.com/
  * Description:       Provides Laravel-style variable dumping to a web-based viewer.
  * Version:           2.2.0
@@ -8,7 +8,7 @@
  * Author URI:        https://hasanuzzaman.com/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       wp-dumper
+ * Text Domain:       dump-wp
  */
 
 use Symfony\Component\VarDumper\Cloner\VarCloner;
@@ -102,7 +102,7 @@ function wp_dumper_output_vars() {
     }
 
     // Basic wrapper for styling and clarity
-    echo '<div class="wp-dumper-output-wrapper" style="padding: 20px; background: #222; margin-top: 30px; border-top: 5px solid #5864f2; z-index: 99999; position: relative;">';
+    echo '<div class="dump-wp-output-wrapper" style="padding: 20px; background: #222; margin-top: 30px; border-top: 5px solid #5864f2; z-index: 99999; position: relative;">';
     foreach ($GLOBALS['wp_dumper_vars_to_dump'] as $dumpHtml) {
         echo $dumpHtml;
     }
@@ -124,41 +124,42 @@ if (!function_exists('dump')) {
     }
 }
 
-if (!function_exists('dd')) {
+//if (!function_exists('dd')) {
+
     /**
      * Dumps the given variables and ends the script.
      */
     function dd(...$vars)
-{
-    // Check if this is a REST API or AJAX request
-    $isRestRequest = defined('REST_REQUEST') && REST_REQUEST;
-    $isAjaxRequest = wp_doing_ajax();
+    {
+        // Check if this is a REST API or AJAX request
+        $isRestRequest = defined('REST_REQUEST') && REST_REQUEST;
+        $isAjaxRequest = wp_doing_ajax();
 
-    if ($isRestRequest || $isAjaxRequest) {
-        // For AJAX, output HTML directly
-        echo '<pre>';
-        foreach ($vars as $var) {
-            var_dump($var);
+        if ($isRestRequest || $isAjaxRequest) {
+            // For AJAX, output HTML directly
+            echo '<pre>';
+            foreach ($vars as $var) {
+                var_dump($var);
+            }
+            echo '</pre>';
+            die();
+        } else {
+            // For regular requests, use the original behavior
+            echo '<div style="padding: 10px; background: #18171B;">';
+
+            // Temporarily disable the custom handler to dump directly.
+            $handler = VarDumper::setHandler(null);
+
+            foreach ($vars as $var) {
+                VarDumper::dump($var);
+            }
+
+            // Restore the original handler if it existed.
+            VarDumper::setHandler($handler);
+
+            echo '</div>';
+            die(1);
         }
-        echo '</pre>';
-        die();
-    } else {
-        // For regular requests, use the original behavior
-        echo '<div style="padding: 10px; background: #18171B;">';
-
-        // Temporarily disable the custom handler to dump directly.
-        $handler = VarDumper::setHandler(null);
-
-        foreach ($vars as $var) {
-            VarDumper::dump($var);
-        }
-
-        // Restore the original handler if it existed.
-        VarDumper::setHandler($handler);
-
-        echo '</div>';
-        die(1);
-    }
-}
+//}
 }
 
